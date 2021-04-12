@@ -8,8 +8,7 @@ import java.util.stream.Collectors;
 
 public class ReadFile {
     public List<String> readLines(File filename) throws IOException {
-        FileReader fileReader = new FileReader(filename);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));
         List<String> lines = bufferedReader.lines()
             .filter(Objects::nonNull)
             .collect(Collectors.toList());
